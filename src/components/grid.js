@@ -59,6 +59,12 @@ const Grid = () => {
     //setTimeout(startSimulation, 1000);
   };
 
+  const resetHandler = () => {
+    setNumRow(0);
+    setNumCol(0);
+    setGrid(() => resetGrid());
+  };
+
   return (
     <>
       <div
@@ -123,8 +129,9 @@ const Grid = () => {
           runSimulation();
         }}
       >
-        {running ? "Stop" : "Start"}
+        Simulate
       </button>
+      <button onClick={resetHandler}>Reset</button>
     </>
   );
 };
